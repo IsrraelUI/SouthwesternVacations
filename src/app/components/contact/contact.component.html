@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-3">
+    <button type="button" class="btn btn-outline-secondary col-sm-12" (click)="showModal = true"><i class="fa fa-envelope-o"></i> &nbsp;Contact Us</button>
+  </div>
+</div>
+<div class="fadeIn" *ngIf="showModal">
+    <div class="modal-backdrop fade show"></div>
+  <div class="modal fade fadeIn show" style="display: block" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+          <button type="button" class="close"  (click)="showModal = false">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+              <div class="form-group row">
+                  <label for="name" class="col-2 col-form-label">Name:</label>
+                  <div class="col-10">
+                    <input class="form-control" type="text" id="name" required>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="email" class="col-2 col-form-label">Email:</label>
+                  <div class="col-10">
+                    <input class="form-control" type="email" id="email" required>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="comments" class="col-12 col-form-label">Comments:</label>
+                  <div class="col-12">
+                    <textarea class="form-control" type="email" id="comments" required></textarea>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="showModal = false">Cancel</button>
+            <input type="submit" class="btn btn-primary" value="Submit">
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

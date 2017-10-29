@@ -1,0 +1,25 @@
+
+<div class="row fadeIn">
+  <div class="col-12">
+    <div class="packages-gallery">
+      <ul class="images">
+        <li *ngFor="let image of images" [style.background-image]="image.url" [ngClass]="{'active':image.status == 'active'}">
+          <a [routerLink]="['/package', image.id]">
+            <span class="image-name">
+                {{image.name}}
+            </span>
+            <span class="image-desc">
+                {{image.desc}}
+            </span>
+            <span>Read more...</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="pager">
+        <li *ngFor="let image of images; let i = index">
+          <a (click)="showImage(i)" [ngClass]="{'active':image.status == 'active'}" [style.background-image]="image.url"></a>
+        </li>
+      </ul>
+    </div>
+</div>
+</div>
